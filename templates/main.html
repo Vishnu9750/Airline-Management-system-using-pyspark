@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Main Project Page{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{% block content %}
+<div class="main-container">
+    <h2>Select an Analysis to Perform</h2>
+    <div class="button-container">
+        <a href="{{ url_for('flight_delay') }}" class="button">Flight Delay Analysis</a><br>
+        <a href="{{ url_for('carrier_performance_view') }}" class="button">Carrier Performance</a><br>
+        <a href="{{ url_for('popular_routes') }}" class="button">Popular Flight Routes</a><br>
+        <a href="{{ url_for('customer_satisfaction') }}" class="button">Customer Satisfaction</a><br>
+        <a href="{{ url_for('cancellations_weather') }}" class="button">Cancellations & Weather</a><br>
+    </div>
+</div>
+{% endblock %}

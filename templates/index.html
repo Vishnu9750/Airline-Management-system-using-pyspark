@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{% block content %}
+<div class="welcome-container">
+    <h2>Welcome to the Airline Management System</h2>
+    <p>Click "Next" to proceed to the main project page.</p>
+    <a href="{{ url_for('main_page') }}" class="button">Next</a>
+</div>
+{% endblock %}

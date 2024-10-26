@@ -1,0 +1,14 @@
+<!-- templates/welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Welcome</title>
+</head>
+<body><center>
+   <br><br><br> <h1>Welcome to the Flight Analysis App!</h1></center>
+    <a href="{{ url_for('main_page') }}">Go to Main Page</a>
+</body>
+</html>

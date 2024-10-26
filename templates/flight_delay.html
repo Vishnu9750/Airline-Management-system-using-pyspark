@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Flight Delay Analysis{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{% block content %}
+<div class="analysis-container">
+    <h2>Flight Delay Analysis</h2>
+    <form method="post" action="{{ url_for('flight_delay') }}">
+        <label for="FlightNum">Enter Flight ID:</label>
+        <input type="text" id="FlightNum" name="FlightNum" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+        <h3>Analysis Result:</h3>
+        <p>{{ result }}</p>
+    {% endif %}
+</div>
+{% endblock %}

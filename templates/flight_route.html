@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Popular Flight Routes{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{% block content %}
+<div class="analysis-container">
+    <h2>Popular Flight Routes Analysis</h2>
+    <form method="post" action="{{ url_for('popular_routes') }}">
+        <label for="origin">Origin:</label>
+        <select name="origin" id="origin">
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Dubai">Dubai</option>
+        </select>
+
+        <label for="destination">Destination:</label>
+        <select name="destination" id="destination">
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Dubai">Dubai</option>
+        </select>
+
+        <button type="submit">View Flight Route Analysis</button>
+    </form>
+
+    {% if result %}
+        <h3>Flight Route Analysis:</h3>
+        <p>{{ result }}</p>
+    {% endif %}
+</div>
+{% endblock %}
